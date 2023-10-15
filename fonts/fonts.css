@@ -10,9 +10,8 @@
 @font-face {
     font-display: swap;
     font-family: 'Inter-Variable';
-    src:
-        local('Inter-Variabl'),
-        url('./Inter-Variable.woff2') format('woff2 supports variations');
-        url('./Inter-Variable.woff2') format('woff2'); /* Фолбэк для старых браузеров */
-    font-weight: 400 785;
+    src: local('Inter Variable'),
+         url('./Inter-Variable.woff2') format('woff2-variations'), /* Исправленный формат */
+         url('./Inter-Variable.woff2') format('woff2'); /* Фолбэк для старых браузеров */
+    font-weight: 400 785; /* Указаны правильные начертания */
 }
