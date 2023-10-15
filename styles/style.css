@@ -17,4 +17,469 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--font-primary);
+  font-variation-settings: 'wght' var(--font-weight-card);
+  background-color: var(--background-color);
+  color: var(--font-color);
+  background-image: var(--horizontal-stripes), var(--vertical-stripes), var(--background-base-gradient);
+  background-size: cover;
+  background-attachment: fixed;  
+}
+
+.header, .card {
+  border: 2px solid var(--font-color);
+  background-color: var(--background-color);
+}
+
+.header {
+  margin-block-start: 100px;
+  margin-block-end: 100px;
+  max-width: var(--header-width);
+  height: clamp(327px, calc(327px + 0.0385 * (100vw - 375px)), 368px);
+  padding-block-start: clamp(120px, calc(120px + 0.015 * (100vw - 375px)), 136px);
+}
+
+.title {
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  font-weight: var(--font-weight-card);
+  line-height: normal;
+  text-align: center;
+  font-family: var(--font-accent);
+  color: var(--font-color);
+  text-transform: uppercase;
+  font-style: normal;
+}
+
+.subtitle {
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  font-weight: var(--font-weight-card);
+  line-height: normal;
+  text-align: center;
+  margin-block-start: 20px;
+  font-family: var(--font-accent);
+  color: var(--font-color);
+  text-transform: uppercase;
+  font-style: normal;
+}
+
+.header__theme-menu {
+  text-align: center;
+  margin-block-start: 25px;
+}
+
+.theme-menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.theme-menu__button {
+  position: relative;
+  font-size: 14px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: var(--font-accent);
+  text-transform: uppercase;
+  font-style: normal;
+  line-height: normal;
+  font-weight: var(--font-weight-card);
+  transition: opacity 0.3s ease; /* Плавное изменение */
+}
+
+/* Активный элемент */
+.theme-menu__button:disabled::before {
+  position: absolute;
+  content: "▶";
+  color: inherit;
+  vertical-align: middle;
+  opacity: 0.6;
+  left: -15px;
+  animation: arrowAnimation 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes arrowAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(4px);
+  }
+}
+
+.theme-menu__button:disabled {
+  opacity: 0.6;
+  pointer-events: none; /* Делает кнопку неактивной для взаимодействия */
+}
+
+/* Ховер эффект */
+.theme-menu__button:hover {
+  opacity: 0.6;
+}
+
+/* Фокус анимация */
+.theme-menu__button:focus {
+  outline: none;
+  opacity: 0.6;
+}
+
+/* Псевдоэлемент для подчеркивания при фокусе */
+.theme-menu__button::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.theme-menu__button:focus::after {
+  transform: scaleX(1);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: var(--card-width);
+  height: clamp(760px, calc(760px + 0.1869 * (100vw - 375px)), 959px);
+}
+
+.flexible-content {
+  width: 100%;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  margin-block-end: clamp(50px, calc(50px + 0.00376 * (100vw - 375px)), 54px);
+}
+
+.flexible-content:last-child {
+  margin-block-end: 54px;
+}
+
+.card-title {
+  align-self: flex-start;
+  padding-block-start: 4px;
+  padding-inline-start: 10px;
+  font-size: 18px;
+  font-weight: var(--font-weight-card-header);
+  font-family: var(--font-primary);
+  color: var(--font-color);
+  font-style: normal;
+  line-height: normal;
+}
+
+.card-image {
+  width: 100%;
+  align-self: center;
+  display: block;
+  border-top: 2px solid var(--font-color);
+  border-bottom: 2px solid var(--font-color);
+}
+
+.card-image-wrapper {
+  position: relative;
+}
+
+.image-label {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  mix-blend-mode: hard-light;
+  font-family: var(--font-accent);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: var(--font-weight-card);
+  line-height: normal;
+  color: var(--font-color);
+
+  /* text-stroke для браузеров, которые поддерживают его */
+  -webkit-text-stroke: 1px var(--label-shadow-color); /* для WebKit */
+  text-stroke: 1px var(--label-shadow-color); /* стандартное свойство, если браузер поддерживает */
+}
+
+@supports not ((text-stroke: 1px) or (-webkit-text-stroke: 1px)) {
+  /* Если text-stroke НЕ поддерживается, используем text-shadow */
+  .image-label {
+    text-shadow: 1px 0 0 var(--label-shadow-color);
+  }
+}
+
+.card-description {
+  align-self: center;
+  width: 80%;
+  font-size: 16px;
+  font-weight: var(--font-weight-card);
+  font-family: var(--font-primary);
+  color: var(--font-color);
+}
+
+.card-description:first-of-type {
+  margin-block-start: 25px;
+  margin-block-end: 27px;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-block-start: auto;
+  margin-block-end: auto;
+  margin-inline-end: 25px;
+  gap: 12px;
+}
+
+.card__icon-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  width: 35px;
+  height: 30px;
+  cursor: pointer;
+  border: none;
+  padding: 2px;
+  border: 2px solid transparent;
+  transition: 0.3s ease;
+}
+
+.sparks {
+  opacity: 0;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border-color: var(--font-color);
+}
+
+/* Наведение курсора на иконку */
+.like-icon:hover .core {
+  fill: var(--contour-color);
+  transition: 0.3s;  /* Закрашиваем сердцевину сразу при наведении */
+}
+
+.like-icon:hover .main-body {
+  fill: var(--contour-color);
+  transition: 0.3s 0.05s;  /* Задержка 0.05s при наведении для основного тела */
+}
+
+/* Отвод курсора с иконки */
+.core {
+  transition: 0.3s 0.03s;
+}
+
+.main-body {
+  transition: 0.3s;
+}
+
+.like-icon:active .core {
+  fill: #FF0000;
+  transition: 0.3s;  /* Закрашиваем сердцевину сразу при наведении */
+}
+
+.like-icon:active .main-body {
+  fill: #FF0000;
+  transition: 0.3s 0.05s;  /* Задержка 0.05s при наведении для основного тела */
+}
+
+.like-icon.is-liked .core {
+  fill: #FF0000;
+  transition: 0.3s;
+}
+
+.like-icon.is-liked .main-body {
+  fill: #FF0000;
+  transition: 0.3s 0.05;
+}
+
+.like-icon.is-liked .contour {
+  fill: #FF0000;
+  transition: 0.3s 0.06s;
+}
+
+.like-icon.is-liked .heart {
+  animation: scaleHeart 0.3s 0.1s ease-in;
+  transform-origin: center;
+}
+
+@keyframes scaleHeart {
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparkAnimation 0.3s 0.2s ease-in;
+}
+
+@keyframes sparkAnimation {
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.like-button {
+  align-self: initial;
+  max-width: 130px;
+  max-height: 38px;
+  padding: 9px 17px;
+}
+
+.like-button__text {
+  font-style: normal;
+  line-height: 90%;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-block-end: 102px;
+}
+
+.save-button {
+  flex-direction: column;
+  width: clamp(306px, calc(306px + 0.02723 * (100vw - 375px)), 335px);
+  height: clamp(80px, calc(80px - 0.02723 * (100vw - 375px)), 51px);
+  padding: 15px 20px;
+  gap: 8px;
+}
+
+.button {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+  cursor: pointer;
+  background-color: var(--background-color);
+  border: 2px solid var(--font-color);
+}
+
+.save-button__text {
+  line-height: 12.6px;
+}
+
+.save-button__svg {
+  mix-blend-mode: difference;
+  color: var(--blend-mode-text-color);
+  z-index: 3;
+  inline-size: clamp(21px, 2.4063rem + -2.5vw, 28px);
+}
+
+.like-button:focus, .save-button:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 var(--font-color);
+  transition: box-shadow 0.5s ease-in-out;
+}
+
+.button__text, .save-button__text {
+  position: relative;
+  mix-blend-mode: difference;
+  z-index: 3;
+  font-family: var(--font-accent);
+  font-size: 14px;
+  font-weight: var(--font-weight-card);
+  color: var(--blend-mode-text-color);
+}
+
+.like-button::before, .save-button::before {
+  content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+  transform: translateX(-100%);
+  transition: all 0.5s ease-in-out;
+  background-color: var(--pseudo-element-color); 
+  z-index: 1;
+}
+
+.like-button:hover::before, .save-button:hover::before {
+  transform: translateX(0%);
+}
+
+#modal[open] {
+  width: clamp(341px, calc(341px + (16px * (100vw - 375px) / (1440px - 375px))), 357px);
+  height: clamp(193px, calc(195px - (2px * (100vw - 375px) / (1440px - 375px))), 195px);
+  display: flex; /* или любое другое значение display, которое вы хотите применить */
+  flex-direction: column;
+  background-color: var(--background-color);
+  border: 2px solid var(--font-color);
+  color: var(--font-color);
+  font-family: var(--font-accent);
+  font-weight: var(--font-weight-card);
+  font-size: 14px;
+}
+
+.modal-content {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+#modal .save-button__svg {
+  min-inline-size: 39px;
+}
+
+.modal-instruction {
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+::backdrop {
+  background: rgba(0, 0, 0, 0.8); /* полупрозрачный фон */
+}
+
+.dialog-button {
+  padding-block: 10px;
+  inline-size: 100%;
+  transition: 0.3s ease;
+}
+
+dialog-button__text {
+  position: relative;
+  mix-blend-mode: difference;
+  font-weight: var(--font-weight-card);
+  color: var(--blend-mode-text-color);
+}
+
+.card-image--multiple {
+  filter: contrast(150%) brightness(0.8); /* Комбинирование нескольких фильтров */
+}
+
+.card-image--saturate {
+  filter: saturate(2); /* Увеличиваем насыщенность */
+}
+
+.card-image--grayscale {
+  filter: grayscale(100%); /* Преобразует изображение в полностью черно-белое */
+}
+
+.card-image--invert {
+  filter: invert(1); /* Полностью инвертируем цвета */
+}
+
+.card-image--sepia {
+  filter: sepia(1); /* Добавляем сепиа-эффект */
+}
+
+.card-image--blur {
+  filter: blur(5px); /* Добавляем размытие */
+}
+
+.card-image--hue-rotate {
+  filter: hue-rotate(90deg); /* Вращаем оттенок */
 }

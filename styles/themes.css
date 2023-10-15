@@ -4,3 +4,70 @@
 ✦ theme-light — класс светлой темы
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
+
+/* Для светлой темы */
+:root.theme-light {
+    --font-weight-main: 400;
+    --font-weight-heading: 700;
+    --background-color: #FFFFFF; /* Белый цвет фона для светлой темы */
+    --font-color: #000000;       /* Черный цвет текста для светлой темы */
+    --vertical-stripes: repeating-linear-gradient(90deg, #d3d3d3 0%, #d3d3d3 2px, transparent 2px, transparent 4px);
+    --horizontal-stripes: repeating-linear-gradient(0deg, #d3d3d3 0%, #d3d3d3 2px, transparent 2px, transparent 4px);
+    --background-base-gradient: linear-gradient(0deg, #1A1A1A 0%, #E7E7E7 100%);
+    --label-shadow-color:rgba(255, 255, 255, 0.5);
+    --blend-mode-text-color: #FFFFFF;
+    --pseudo-element-color: #000000;
+    --contour-color: #000000;
+    --fill-color: #FF0000;
+}
+
+/* Для темной темы */
+:root.theme-dark {
+    --font-weight-main: 465;   /* потолще для темной темы */
+    --font-weight-heading: 785;   /* потолще для заголовков в темной теме */
+    --background-color: #000000;
+    --font-color: #00CC14;
+    --vertical-stripes: repeating-linear-gradient(90deg, #000 0%, #000 2px, transparent 2px, transparent 4px);
+    --horizontal-stripes: repeating-linear-gradient(0deg, #000 0%, #000 2px, transparent 2px, transparent 4px);
+    --background-base-gradient: linear-gradient(0deg, #004306 0%, #007F0C 100%);
+    --label-shadow-color:rgba(0, 0, 0, 0.5);
+    --blend-mode-text-color: #00CC14;
+    --pseudo-element-color: #00CC14;
+    --contour-color: #00CC14;
+    --fill-color: #00CC14;
+}
+
+/* Для предпочтений пользователя */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --font-weight-main: 465;
+        --font-weight-heading: 785;
+        --background-color: #000000;
+        --font-color: #00CC14;
+        --vertical-stripes: repeating-linear-gradient(90deg, #000 0%, #000 2px, transparent 2px, transparent 4px);
+        --horizontal-stripes: repeating-linear-gradient(0deg, #000 0%, #000 2px, transparent 2px, transparent 4px);
+        --background-base-gradient: linear-gradient(0deg, #004306 0%, #007F0C 100%);
+        --label-shadow-color:rgba(0, 0, 0, 0.5);
+        --blend-mode-text-color: #00CC14;
+        --pseudo-element-color: #00CC14;
+        --contour-color: #00CC14;
+        --fill-color: #00CC14;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --font-weight-main: 400;
+        --font-weight-heading: 700;
+        --background-color: #FFFFFF;
+        --font-color: #000000;
+        --vertical-stripes: repeating-linear-gradient(90deg, #d3d3d3 0%, #d3d3d3 2px, transparent 2px, transparent 4px);
+        --horizontal-stripes: repeating-linear-gradient(0deg, #d3d3d3 0%, #d3d3d3 2px, transparent 2px, transparent 4px);
+        --background-base-gradient: linear-gradient(0deg, #1A1A1A 0%, #E7E7E7 100%);
+        --label-shadow-color:rgba(255, 255, 255, 0.5);
+        --blend-mode-text-color: #FFFFFF;
+        --pseudo-element-color: #000000;
+        --contour-color: #000000;
+        --fill-color: #FF0000;
+    }
+}
