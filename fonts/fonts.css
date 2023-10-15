@@ -13,6 +13,6 @@
     src:
         local('Inter-Variabl'),
         url('./Inter-Variable.woff2') format('woff2 supports variations');
-        url('./Inter-Variable.woff2') format('woff2-variations'); /* Фолбэк для старых браузеров */
-    font-weight: 400 800;
+        url('./Inter-Variable.woff2') format('woff2'); /* Фолбэк для старых браузеров */
+    font-weight: 400 785;
 }

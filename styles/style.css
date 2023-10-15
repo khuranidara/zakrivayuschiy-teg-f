@@ -23,7 +23,7 @@
   color: var(--font-color);
   background-image: var(--horizontal-stripes), var(--vertical-stripes), var(--background-base-gradient);
   background-size: cover;
-  background-attachment: fixed;  
+  background-attachment: fixed;
 }
 
 .header, .card {
@@ -240,7 +240,6 @@
   width: 35px;
   height: 30px;
   cursor: pointer;
-  border: none;
   padding: 2px;
   border: 2px solid transparent;
   transition: 0.3s ease;
@@ -402,8 +401,8 @@ footer {
 	width: 100%;
 	height: 100%;
   transform: translateX(-100%);
-  transition: all 0.5s ease-in-out;
-  background-color: var(--pseudo-element-color); 
+  transition: 0.5s ease-in-out;
+  background-color: var(--pseudo-element-color);
   z-index: 1;
 }
 
