@@ -146,7 +146,7 @@
   flex-direction: column;
   justify-content: space-between;
   max-width: var(--card-width);
-  height: clamp(760px, calc(760px + 0.1869 * (100vw - 375px)), 959px);
+  padding-block-end: 25px;
 }
 
 .flexible-content {
