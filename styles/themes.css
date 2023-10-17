@@ -34,7 +34,7 @@
     --blend-mode-text-color: #00CC14;
     --pseudo-element-color: #00CC14;
     --contour-color: #00CC14;
-    --fill-color: #00CC14;
+    --fill-color: #FF0000;
 }
 
 /* Для предпочтений пользователя */
@@ -51,7 +51,7 @@
         --blend-mode-text-color: #00CC14;
         --pseudo-element-color: #00CC14;
         --contour-color: #00CC14;
-        --fill-color: #00CC14;
+        --fill-color: #FF0000;
     }
 }
 
