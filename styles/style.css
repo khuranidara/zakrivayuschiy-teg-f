@@ -264,60 +264,60 @@
 
 /* Наведение курсора на иконку */ 
 .like-icon:hover .core { 
-  fill: var(--contour-color); 
-  transition: fill 0.3s;  /* Закрашиваем сердцевину сразу при наведении */ 
+  fill: var(--contour-color);
+  transition: fill 0.3s;/* Закрашиваем сердцевину сразу при наведении */
 } 
 
 .like-icon:hover .main-body { 
-  fill: var(--contour-color); 
-  transition: fill 0.3s 0.05s;  /* Задержка 0.05s при наведении для основного тела */ 
+  fill: var(--contour-color);
+  transition: fill 0.3s 0.05s;/* Задержка 0.05s при наведении для основного тела */
 }
 
 /* Отвод курсора с иконки */ 
 .core { 
-  transition: fill 0.3s 0.03s; 
+  transition: fill 0.3s 0.03s;
 } 
 
 .main-body { 
-  transition: fill 0.3s; 
+  transition: fill 0.3s;
 } 
 
 .contour { 
-  transition: fill 0.3s;  /* Указываем конкретное свойство для плавности */
+  transition: fill 0.3s;/* Указываем конкретное свойство для плавности */
 }
 
 .like-icon:active .core { 
-  fill: var(--fill-color);  
-  transition: fill 0.3s;  /* Закрашиваем сердцевину сразу при наведении */ 
+  fill: var(--fill-color);
+  transition: fill 0.3s;/* Закрашиваем сердцевину сразу при наведении */
 } 
 
 .like-icon:active .main-body { 
-  fill: var(--fill-color);  
-  transition: fill 0.3s 0.05s;  /* Задержка 0.05s при наведении для основного тела */ 
+  fill: var(--fill-color);
+  transition: fill 0.3s 0.05s;/* Задержка 0.05s при наведении для основного тела */
 } 
 
 .like-icon.is-liked .core { 
-  fill: var(--fill-color);  
-  transition: fill 0.3s; 
+  fill: var(--fill-color);
+  transition: fill 0.3s;
 } 
 
 .like-icon.is-liked .main-body { 
-  fill: var(--fill-color); 
-  transition: fill 0.3s 0.05; 
+  fill: var(--fill-color);
+  transition: fill 0.3s 0.05;
 }
 
 .like-icon.is-liked .heart { 
   animation: scaleHeart 0.3s ease-in 0.1s both;
-  transform-origin: center; 
+  transform-origin: center;
 } 
 
 .like-icon.is-liked .contour { 
-  fill: var(--fill-color); 
-  transition: fill 0.3s 0.06s; 
+  fill: var(--fill-color);
+  transition: fill 0.3s 0.06s;
 } 
 
 .like-icon.is-liked .sparks { 
-  animation: sparkAnimation 0.3s ease-in 0.3s both; 
+  animation: sparkAnimation 0.3s ease-in 0.3s both;
 } 
 
 .card__like-button {
@@ -376,7 +376,7 @@ button:focus-visible {
 
 .button__text { 
   /* Общие стили для текста всех кнопок. */
-  position: relative; 
+  position: relative;
   mix-blend-mode: difference;
   z-index: 3;
   font-family: var(--font-accent);
@@ -386,19 +386,19 @@ button:focus-visible {
 }
 
 /* Общий класс для псевдоэлементов кнопок */
-.button-pseudo:before { 
-  content: ""; 
-  position: absolute; 
-  inset: 0; 
-  block-size: 100%; 
-  inline-size: 100%; 
-  transform: translateX(-100%); 
+.button-pseudo:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  block-size: 100%;
+  inline-size: 100%;
+  transform: translateX(-100%);
   transition: transform 0.5s ease-in-out;
-  background-color: var(--pseudo-element-color); 
-  z-index: 1; 
+  background-color: var(--pseudo-element-color);
+  z-index: 1;
 } 
 
-.button-pseudo:hover::before { 
+.button-pseudo:hover::before {
   transform: translateX(0%); 
 }
 
@@ -501,7 +501,6 @@ button:focus-visible {
     block-size: 51px;
   }
   .save-button__icon {
-    inline-size: 21px;
     inline-size: 21px;
   }
 }
