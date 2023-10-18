@@ -330,24 +330,26 @@
             </div>
           </article>
         </li>
+        <li class="card-list__item">
+          <button type="button" class="save-button button button-pseudo"  onclick="document.getElementById('modal').showModal();"  aria-controls="modal">
+            <svg class="save-button__icon" aria-hidden="true">
+              <use href="svg/floppy.svg#icon-floppy"></use>
+            </svg>
+            <span class="save-button__text button__text">Сохранить на память</span>
+          </button>
+        </li>
       </ul>
     </main>
-    <footer class="page__footer">
-      <button type="button" class="save-button button button-pseudo" onclick="window['modal'].showModal()" aria-controls="modal">
-        <svg class="save-button__icon" aria-hidden="true">
-          <use href ="svg/floppy.svg"></use>
-        </svg>
-        <span class="save-button__text button__text">Сохранить на память</span>
-      </button>
-  </footer>
     <script src="./scripts/like.js"></script>
     <dialog id="modal" class="modal-dialog">
-      <svg class="modal-dialog__svg-icon" aria-hidden="true">
-        <use href="svg/floppy.svg"></use>
-      </svg>
-      <p class="modal-dialog__instruction">Вставьте дискету, чтобы продолжить</p>
-      <form method="dialog">
-        <button class="dialog-button button button-pseudo" type="submit" onclick="window['modal'].close" aria-controls="modal">
+      <div class="modal-content">
+        <svg class="modal-dialog__svg-icon" aria-hidden="true">
+          <use href="svg/floppy.svg#icon-floppy"></use>
+        </svg>
+        <p class="modal-dialog__instruction">Вставьте дискету, чтобы продолжить</p>
+      </div>
+      <form method="dialog" class="modal-dialog__form">
+        <button class="dialog-button button button-pseudo" type="button"  onclick="document.getElementById('modal').close();" aria-controls="modal">
           <span class="dialog-button__text button__text">Ок</span>
         </button>
       </form>

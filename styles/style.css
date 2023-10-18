@@ -135,6 +135,8 @@
   display: flex;
   flex-direction: column;
   gap: calc(50px + 3.76vw);
+  align-items: center;
+  justify-content: center;
 }
 
 .card {
@@ -330,19 +332,11 @@
   line-height: 90%;
 }
 
-.page__footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-block-end: 102px;
-}
-
 .save-button {
   appearance: none;
   flex-direction: column;
-  width: clamp(306px, calc(306px + 0.02723 * (100vw - 375px)), 335px);
-  height: clamp(80px, calc(80px - 0.02723 * (100vw - 375px)), 51px);
-  padding: 15px 20px;
+  block-size: 80px;
+  inline-size: 306px;
   gap: 8px;
 }
 
@@ -367,8 +361,8 @@
   mix-blend-mode: difference;
   color: var(--blend-mode-text-color);
   z-index: 3;
-  block-size: 21px;
-  inline-size: 21px;
+  block-size: 28px;
+  inline-size: 28px;
 }
 
 .button:focus {
@@ -408,53 +402,68 @@ button:focus-visible {
   transform: translateX(0%); 
 }
 
-.modal-dialog {
-  width: auto;
-  min-width: 341px;
-  max-width: 357px;
-  padding: 20px;
-  display: flex; 
-  flex-direction: column; 
-  background-color: var(--background-color); 
-  border: 2px solid var(--font-color); 
-  color: var(--font-color); 
-  font-family: var(--font-accent); 
-  font-weight: var(--font-weight-card); 
-  font-size: 14px; 
+.modal-dialog[open] {
+  max-inline-size: 357px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  background-color: var(--background-color);
+  border: 2px solid var(--font-color);
 }
 
 .modal-content {
   display: flex;
   gap: 20px;
+  justify-content: space-between;
   align-items: center;
+  inline-size: 100%;
 }
 
 .modal-dialog__svg-icon {
-  fill: var(--font-color);
+  color: var(--font-color);
   block-size: 39px;
   inline-size: 39px;
-  stroke: var(--font-color);
 }
 
-.modal-instruction {
-  line-height: 1.5;
+.modal-dialog__instruction {
+  color: var(--font-color);
+  font-family: var(--font-accent);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: var(--font-weight-card);
+  line-height: 150%;
   text-transform: uppercase;
+  max-inline-size: 234px;
 }
 
 .modal-dialog::backdrop {
   background: rgba(0, 0, 0, 0.8);
 }
 
-.dialog-button {
-  padding-block: 10px;
+.modal-dialog__form {
   inline-size: 100%;
-  text-transform: uppercase;
+}
+
+.dialog-button {
+  inline-size: 100%;
+  padding: 9px 17px;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--font-color);
+  background: var(--background-color);
 }
 
 .dialog-button__text {
-  line-height: 1.5;
-  white-space: normal;
-  max-inline-size: 234px;
+  color: var(--blend-mode-text-color);
+  font-family: var(--font-accent);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: var(--font-weight-card);
+  line-height: 90%;
+  text-transform: uppercase;
 }
 
 .card__image--multiple {
@@ -483,4 +492,16 @@ button:focus-visible {
 
 .card__image--hue-rotate {
   filter: hue-rotate(90deg); /* Вращаем оттенок */
+}
+
+@media screen and (min-width: 376px) {
+  .save-button {
+    flex-direction: row;
+    inline-size: 335px;
+    block-size: 51px;
+  }
+  .save-button__icon {
+    inline-size: 21px;
+    inline-size: 21px;
+  }
 }
