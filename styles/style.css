@@ -518,6 +518,7 @@ button:focus-visible {
     flex-direction: row;
     inline-size: 335px;
     block-size: 51px;
+    margin-block-end: 105px;
   }
   .save-button__icon {
     inline-size: 21px;
@@ -529,13 +530,5 @@ button:focus-visible {
 
   .card__image-label {
     right: 25px;
-  }
-
-  .card__description {
-    padding-inline-end: 25px;
-  }
-
-  .save-button {
-    margin-block-end: 105px;
   }
 }
