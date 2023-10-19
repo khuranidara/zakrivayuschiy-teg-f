@@ -7,8 +7,8 @@
 
 /* Для светлой темы */
 :root.theme-light {
-    --font-weight-main: 400;
-    --font-weight-heading: 700;
+    --font-weight-card: 400;
+    --font-weight-card-header: 700;
     --background-color: #FFFFFF; /* Белый цвет фона для светлой темы */
     --font-color: #000000;       /* Черный цвет текста для светлой темы */
     --vertical-stripes: repeating-linear-gradient(90deg, #d3d3d3 0%, #d3d3d3 2px, transparent 2px, transparent 4px);
@@ -23,8 +23,8 @@
 
 /* Для темной темы */
 :root.theme-dark {
-    --font-weight-main: 465;   /* потолще для темной темы */
-    --font-weight-heading: 785;   /* потолще для заголовков в темной теме */
+    --font-weight-card: 465;   /* потолще для темной темы */
+    --font-weight-card-header: 785;   /* потолще для заголовков в темной теме */
     --background-color: #000000;
     --font-color: #00CC14;
     --vertical-stripes: repeating-linear-gradient(90deg, #000 0%, #000 2px, transparent 2px, transparent 4px);
@@ -40,8 +40,8 @@
 /* Для предпочтений пользователя */
 @media (prefers-color-scheme: dark) {
     :root {
-        --font-weight-main: 465;
-        --font-weight-heading: 785;
+        --font-weight-card: 465;
+        --font-weight-card-header: 785;
         --background-color: #000000;
         --font-color: #00CC14;
         --vertical-stripes: repeating-linear-gradient(90deg, #000 0%, #000 2px, transparent 2px, transparent 4px);
@@ -57,8 +57,8 @@
 
 @media (prefers-color-scheme: light) {
     :root {
-        --font-weight-main: 400;
-        --font-weight-heading: 700;
+        --font-weight-card: 400;
+        --font-weight-card-header: 700;
         --background-color: #FFFFFF;
         --font-color: #000000;
         --vertical-stripes: repeating-linear-gradient(90deg, #d3d3d3 0%, #d3d3d3 2px, transparent 2px, transparent 4px);
